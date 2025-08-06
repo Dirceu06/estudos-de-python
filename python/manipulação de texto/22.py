@@ -1,0 +1,2 @@
+nome = input('qual o seu nome? ')
+print('Miusculo: {}\nMinuscula: {}\nTotal de letras: {}\nLetras no primeiro nome: {}'.format(nome.upper(),nome.lower(),len(''.join(nome.split())),len((nome.split())[0])))
