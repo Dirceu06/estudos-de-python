@@ -1,16 +1,11 @@
-def soma(*num,sub=False):
-    """_summary_
+import datetime
+def voto(ano):
+    situacao = ''
+    idade = datetime.datetime.now().year - ano
+    if (idade >= 16 and idade < 18) or idade >=65: situacao = 'OPCIONAL'
+    if idade >= 18: situacao = 'OBRIGATÓRIO'
+    if idade < 16: situacao = 'NEGADO'
+    return situacao
 
-    Args:
-        sub (bool, optional): _description_. Defaults to False.
 
-    Returns:
-        _type_: _description_
-    """
-    resultado = 0
-    for n in num:
-        if sub: resultado-=n
-        else: resultado+=n
-    return resultado
-
-print(soma(3,2,5,3,2,1,3,sub=True))
+print(f'seu voto é {voto(int(input('ano de nascimento: ')))}')
